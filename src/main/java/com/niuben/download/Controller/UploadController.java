@@ -30,7 +30,7 @@ public class UploadController {
         Integer currentChunk = null; //当前分片数
         Integer totalChunk = null; //总分片数
         String name = null; //文件名称
-        String uploadPath = "C:\\upload"; //存储路径
+        String uploadPath = "C:\\blog-upload-download\\upload"; //存储路径
         BufferedOutputStream os = null;
         try {
             DiskFileItemFactory factory = new DiskFileItemFactory();

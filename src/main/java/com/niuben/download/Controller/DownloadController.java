@@ -23,7 +23,7 @@ public class DownloadController {
     public void downloadFile(HttpServletRequest request,
                              HttpServletResponse response,
                              @PathVariable("fileName") String fileName) throws Exception {
-        File file = new File("C:\\upload\\" + fileName);
+        File file = new File("C:\\blog-upload-download\\upload\\" + fileName);
         response.setCharacterEncoding(UTF8);
         InputStream in = null;
         OutputStream out = null;

@@ -12,7 +12,7 @@
     <div class="content">
       <a class="header" th:text="${file.name}">Semantic-Org/Semantic-UI</a>
       <div class="description" th:text="${file.size}">Updated 10 mins ago</div>
-      <button>下载</button>
+      <a th:href="'/downloadFile/'+${file.name}">下载</a>
     </div>
   </div>
 </div>

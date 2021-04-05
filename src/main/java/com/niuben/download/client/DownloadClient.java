@@ -19,7 +19,7 @@ import java.util.concurrent.Executors;
 public class DownloadClient {
 
     private final static long PER_PAGE = 1024l * 1024L * 50l;//默认每个分片5m
-    private final static String DOWN_PATH = "C:\\download";
+    private final static String DOWN_PATH = "C:\\blog-upload-download\\download";
     ExecutorService pool = Executors.newFixedThreadPool(10);//定义线程池
 
     /**文件大小决定分片数量。
@@ -37,7 +37,7 @@ public class DownloadClient {
                 pool.submit(new Download(i*PER_PAGE,(i+1)*PER_PAGE -1,i,fileInfo.fileName));
             }
         }
-        return "success";
+        return "下载成功！！！";
     }
 
     //下载文件
