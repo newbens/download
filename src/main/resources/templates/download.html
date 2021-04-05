@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>文件</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
 </head>
 <body>
-  <button>下载<button>
+<div class="ui relaxed divided list">
+  <div class="item" th:each="file : ${files}">
+    <i class="large github middle aligned icon"></i>
+    <div class="content">
+      <a class="header" th:text="${file.name}">Semantic-Org/Semantic-UI</a>
+      <div class="description" th:text="${file.size}">Updated 10 mins ago</div>
+      <button>下载</button>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
 </body>
 </html>
