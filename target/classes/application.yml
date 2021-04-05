@@ -1,0 +1,15 @@
+spring:
+  resources:
+    static-locations: classpath:/templates/
+  http:
+    multipart:
+      enabled: false
+  servlet:
+    multipart:
+      enabled: false
+  thymeleaf:
+    cache: false
+    encoding: utf-8
+    mode: HTML5
+    prefix: classpath:/templates/
+    suffix: .html
