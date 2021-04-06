@@ -60,7 +60,7 @@ public class UploadController {
                     String temFileName = name;
                     if (name != null) {
                         if (currentChunk != null) {
-                            temFileName = name +"_"+ currentChunk;
+                            temFileName = currentChunk+"-"+"name";
                         }
                         File temFile = new File(uploadPath,temFileName);
                         if(!temFile.exists()) {//如果文件不存在,就写入
@@ -76,7 +76,7 @@ public class UploadController {
                 os = new BufferedOutputStream(new FileOutputStream(temFile));
                 //合并
                 for (int i = 0; i < totalChunk; i++) {
-                    File file = new File(uploadPath,name+"_"+i);
+                    File file = new File(uploadPath,i+"-"+name);
                     while (file.exists()) { //判断分片是否存在，因为发送分片是一个并发的过程，最后一个分片到了，之前的分片不一定到了
                         Thread.sleep(100);//休眠一会，等会继续获取
                     }

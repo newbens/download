@@ -81,7 +81,7 @@ public class DownloadClient {
         File file = new File(DOWN_PATH,fileName);
         BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(file));
         for (int i = 0; i <= page; i++) {
-            File tempFile = new File(DOWN_PATH,fileName+"-"+i);
+            File tempFile = new File(DOWN_PATH,i+"-"+fileName);
             //合并的时候 因为多线程的原因，可能前面的文件没有下载完成 所以需要等待
             while (!tempFile.exists() || (i != page && tempFile.length() < PER_PAGE)) {
                 Thread.sleep(100);
@@ -91,7 +91,7 @@ public class DownloadClient {
             out.flush();
             tempFile.delete();
         }
-        File file1 = new File(DOWN_PATH,fileName+"--1");
+        File file1 = new File(DOWN_PATH,-1+"-"+fileName);
         file1.delete();
         out.flush();
         out.close();
